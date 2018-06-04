@@ -1,0 +1,18 @@
+<p>
+	<!-- <a [routerLink]="['register']" class="btn btn-link">Register</a>-->
+</p>
+<div class="col-md-6 col-md-offset-3">
+	<h2>Login page</h2>
+	<form class="form-group" [formGroup] = "login" (ngSubmit)="onSubmit(login.value)">
+		<p>Username:<br>
+			<input autofocus="autofocus" type="text" name="user" placeholder="Username" formControlName="username" required>
+		</p>
+		<p>Password:<br>
+			<input type="password" name="password" placeholder="Password" formControlName="password" required>
+		</p>
+		<p>
+			<input type="submit" class="btn btn-primary" [disabled]="!login.valid" value="Login">
+			<a [routerLink]="['']" class="btn btn-link">Cancel</a>
+		</p>
+	</form>
+</div>

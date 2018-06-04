@@ -1,0 +1,28 @@
+<p>
+<!-- <a [routerLink]="['login']" class="btn btn-link">Login</a> -->
+</p>
+<div class="col-md-6 col-md-offset-3">
+	<h2>Signup page</h2>
+		<form class="form-group" [formGroup] = "registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+			<p>Username*:<br>
+				<input autofocus="autofocus" type="text" name="username" placeholder="Username" formControlName="username" required>
+			</p>
+			<p>Email*:<br>
+				<input type="email" name="email" placeholder="Email" formControlName="email" required >
+			</p>
+			<p>Password*:<br>
+				<input type="password" name="password" placeholder="Password" formControlName="password" required>
+			</p>
+			<p>Phone Number*:<br>
+				<input type="text" name="contact" placeholder="Phone Number" formControlName="contact" minlength="10" maxlength="10" required >
+			</p>
+			<p>Address*:<br>
+				<input type="text" name="address" placeholder="Address" formControlName="address" required>
+			</p>
+			<p>
+				<input type="submit" class="btn btn-primary" [disabled]="!registerForm.valid" value="Register" (click)='onRegister()'>
+				<a [routerLink]="['']" class="btn btn-link">Cancel</a>
+			</p>
+		</form>
+</div>
+<!-- <button [disabled]="loading" class="btn btn-primary">Register</button> -->
