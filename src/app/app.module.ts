@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http' 
 import {APP_BASE_HREF} from '@angular/common';
+import { DataService } from './data.service';
+import { UserService } from './user.service';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -44,7 +46,7 @@ import { HomeComponent } from './home/home.component';
     ]),
     HttpModule
   ],
-  providers: [],
+  providers: [DataService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

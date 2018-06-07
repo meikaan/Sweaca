@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+	constructor(private dataService : DataService){
+		
+	}
 }
-// var app = angular.module('myApp', []);
-// app.controller('validateCtrl', function($scope) {
-//     $scope.user = '';
-//     $scope.email = '';
-//     $scope.password = '';
-// });
