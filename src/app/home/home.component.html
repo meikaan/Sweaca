@@ -2,3 +2,11 @@
 	<p>
 		<input type="submit" class="btn btn-primary" value="Log-out" (click)='onClick()'>
 	</p>
+	<p>
+		<button (click)='getUsersDetails()' >Get Users</button>
+		<li *ngFor="let user of users">
+			<span>{{user.username}}</span>
+			<span>{{user.email}}</span>
+		</li>
+
+	</p>
