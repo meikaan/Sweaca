@@ -3,16 +3,30 @@
 </p>
 <div class="col-md-6 col-md-offset-3">
 	<h2>Login page</h2>
-	<form class="form-group" [formGroup] = "login" (ngSubmit)="onSubmit(login.value)">
+	<form class="form-group" [formGroup] = "login" (click)='onSubmit()'>
 		<p>Username:<br>
-			<input autofocus="autofocus" type="text" name="user" placeholder="Username" formControlName="username" required>
+			<input autofocus="autofocus" type="text" name="username" id="username" placeholder="Username" formControlName="username" required>
 		</p>
 		<p>Password:<br>
-			<input type="password" name="password" placeholder="Password" formControlName="password" required>
+			<input type="password" name="password" placeholder="Password" id="password" formControlName="password" required>
 		</p>
 		<p>
 			<input type="submit" class="btn btn-primary" [disabled]="!login.valid" value="Login">
 			<a [routerLink]="['']" class="btn btn-link">Cancel</a>
 		</p>
+		<!-- <button (click)='getData()' class="btn btn-primary">Get data</button> -->
 	</form>
+	<!-- <table>
+			<thead>
+				<tr>
+					<td>Name</td><td>password</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let user of loggers">
+					<td>{{log.username}}</td>
+					<td>{{log.password}}</td>
+				</tr>
+			</tbody>
+		</table> -->
 </div>
