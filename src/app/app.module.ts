@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http' 
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {APP_BASE_HREF} from '@angular/common';
 import { DataService } from './data.service';
 import { UserService } from './user.service';
+import { InMemoryDataService } from './in-memory-data.service';
+// import { AuthguardGuard } from './authguard.guard';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -25,7 +29,10 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
     {
       path: '',
@@ -41,12 +48,12 @@ import { HomeComponent } from './home/home.component';
     },
     {
       path : 'home',
+      // canActivate : [AuthguardGuard],
       component : HomeComponent
     }
     ]),
-    HttpModule
   ],
-  providers: [DataService,UserService],
+  providers: [DataService,UserService,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
