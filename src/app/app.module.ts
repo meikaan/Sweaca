@@ -5,11 +5,14 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http' 
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 import { DataService } from './data.service';
 import { UserService } from './user.service';
 import { InMemoryDataService } from './in-memory-data.service';
-// import { AuthguardGuard } from './authguard.guard';
+import { JwtInterceptorProvider, ErrorInterceptorProvider } from './helpers/index';
+import { AuthenticationService} from './authentication.service';
+ import { AuthguardGuard } from './authguard.guard';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -31,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
@@ -48,12 +52,20 @@ import { HomeComponent } from './home/home.component';
     },
     {
       path : 'home',
-      // canActivate : [AuthguardGuard],
+      canActivate : [AuthguardGuard],
       component : HomeComponent
     }
     ]),
   ],
-  providers: [DataService,UserService,HttpClientModule],
+  providers: [
+      DataService,
+      UserService,
+      AuthenticationService,
+      AuthguardGuard,
+      HttpClientModule,
+      JwtInterceptorProvider,
+      ErrorInterceptorProvider
+      ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
