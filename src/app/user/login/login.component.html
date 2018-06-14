@@ -1,32 +1,40 @@
-<p>
-	<!-- <a [routerLink]="['register']" class="btn btn-link">Register</a>-->
-</p>
-<div class="col-md-6 col-md-offset-3">
+<!-- <div class="col-md-6 col-md-offset-3">
 	<h2>Login page</h2>
-	<form class="form-group" [formGroup] = "login" (click)='onSubmit()'>
+	<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+	<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
 		<p>Username:<br>
-			<input autofocus="autofocus" type="text" name="username" id="username" placeholder="Username" formControlName="username" required>
+			<input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+			<div *ngIf="f.submitted && !username.valid">Please enter the Username</div>
 		</p>
-		<p>Password:<br>
-			<input type="password" name="password" placeholder="Password" id="password" formControlName="password" required>
-		</p>
-		<p>
-			<input type="submit" class="btn btn-primary" [disabled]="!login.valid" value="Login">
-			<a [routerLink]="['']" class="btn btn-link">Cancel</a>
-		</p>
-		<!-- <button (click)='getData()' class="btn btn-primary">Get data</button> -->
+	</div>
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+        <p>Password:<br>    
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid">Please enter the password</div>
+        </p>
+    </div>
+	<div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Login</button>
+			
+	</div>
 	</form>
-	<!-- <table>
-			<thead>
-				<tr>
-					<td>Name</td><td>password</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr *ngFor="let user of loggers">
-					<td>{{log.username}}</td>
-					<td>{{log.password}}</td>
-				</tr>
-			</tbody>
-		</table> -->
+</div> -->
+<div class="container">
+    <h2>Login</h2>
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Login</button>
+            <a [routerLink]="['']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
 </div>

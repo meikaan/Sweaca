@@ -6,40 +6,42 @@ import { Http,HttpModule,Headers } from '@angular/http'
 import { Router } from '@angular/router';
 import { UserService } from '../../user.service';
 import { DataService } from '../../data.service';
+import { AuthenticationService } from '../../authentication.service';
 // import { contentHeaders } from '../../headers';
 // import { contentHeaders } from '../common/headers';
 
 @Component({
-  selector: 'app-login-component,signup',
+  selector: 'app-login-component',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class loginComponent implements OnInit {
-login;
+// login;
+model:any={};
 username:string="";
 password:string="";
-  constructor(private http:Http,private router : Router,public _user:UserService,public dataService : DataService) { } 
+  constructor(
+  private http:Http,
+  private router : Router,
+  public _user:UserService,
+  public dataService : DataService,
+  private authenticationService : AuthenticationService) { } 
   ngOnInit() {
-  this.login = new FormGroup({
-	username : new FormControl("", Validators.required),
-	password : new FormControl("", Validators.required)
-	});
+      this.authenticationService.logout();
   }
-  onSubmit(){
-    this.username = this.login.get('username').value;
-    this.password = this.login.get('password').value;
-    if (this.username == 'jitesh' && this.password == 'jitesh') {
-    alert("Thank u for login");
-    this.login.reset();
-    // this.user.setUserLoggedIn();
-    this.router.navigate(['home']);
-    }
-    else{
-      alert("Invalid Credentials");
-      this.login.reset();
-    }
-// }
-
+  login(){
+    this.authenticationService.login(this.model.username, this.model.password)
+            .subscribe(
+                data => {
+                    this.router.navigate(['home']);
+                },
+                error => {
+                  if(error){
+                    console.log(error);
+                  }
+                    // this.alertService.error(error);
+                    // this.loading = false;
+                });
   }
 }
       // code...
@@ -63,3 +65,19 @@ password:string="";
   //                 console.log(error);
   //              }            
   //   );
+
+/*    onSubmit(){
+    this.username = this.login.get('username').value;
+    this.password = this.login.get('password').value;
+    if (this.username == 'jitesh' && this.password == 'jitesh') {
+    alert("Thank u for login");
+    this.login.reset();
+    // this.user.setUserLoggedIn();
+    this.router.navigate(['home']);
+    }
+    else{
+      alert("Invalid Credentials");
+      this.login.reset();
+    }*/
+
+//   }
