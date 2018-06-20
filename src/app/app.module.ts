@@ -20,6 +20,9 @@ import { loginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { TeamComponent } from './team/team.component';
 //import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
@@ -28,7 +31,10 @@ import { HomeComponent } from './home/home.component';
     loginComponent,
     RegisterComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
+    CheckoutComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +58,20 @@ import { HomeComponent } from './home/home.component';
     },
     {
       path : 'home',
-      canActivate : [AuthguardGuard],
+      // canActivate : [AuthguardGuard],
       component : HomeComponent
+    },
+    {
+      path : 'contact',
+      component : ContactComponent
+    },
+    {
+      path : 'checkout',
+      component : CheckoutComponent
+    },
+    {
+      path : 'team',
+      component : TeamComponent
     }
     ]),
   ],
