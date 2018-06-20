@@ -16,10 +16,10 @@ import { AuthenticationService } from '../../authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class loginComponent implements OnInit {
-// login;
+loginForm;
 model:any={};
-username:string="";
-password:string="";
+// username:string="";
+// password:string="";
   constructor(
   private http:Http,
   private router : Router,
@@ -27,22 +27,29 @@ password:string="";
   public dataService : DataService,
   private authenticationService : AuthenticationService) { } 
   ngOnInit() {
-      this.authenticationService.logout();
+      // this.authenticationService.logout();
+      this.loginForm = new FormGroup({
+        username : new FormControl("",Validators.required),
+        password : new FormControl("",Validators.required)
+      });
   }
-  login(){
-    this.authenticationService.login(this.model.username, this.model.password)
-            .subscribe(
-                data => {
-                    this.router.navigate(['home']);
-                },
-                error => {
-                  if(error){
-                    console.log(error);
-                  }
-                    // this.alertService.error(error);
-                    // this.loading = false;
-                });
+  onSubmit(){
+    
   }
+  // login(){
+  //   this.authenticationService.login(this.model.username, this.model.password)
+  //           .subscribe(
+  //               data => {
+  //                   this.router.navigate(['home']);
+  //               },
+  //               error => {
+  //                 if(error){
+  //                   console.log(error);
+  //                 }
+  //                   // this.alertService.error(error);
+  //                   // this.loading = false;
+  //               });
+  // }
 }
       // code...
     //console.log(this.login.get('username').value);
