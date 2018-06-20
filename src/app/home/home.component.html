@@ -1,12 +1,54 @@
-<h2>Welcome {{home}}</h2>
-	<p>
-		<input type="submit" class="btn btn-primary" value="Log-out" (click)='onClick()'>
-	</p>
-	<p>
-		<button (click)='getUsersDetails()' >Get Users</button>
-		<li *ngFor="let user of users">
-			<span>{{user.username}}</span>
-			<span>{{user.email}}</span>
-		</li>
-
-	</p>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+<nav class="navbar navbar-default">
+  <h5>SWEACA NUSERY</h5>
+    <a [routerLink]="['']" class="btn btn-link"><i class="fa fa-home"></i>Home</a>
+    <a [routerLink]="['/contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
+    <a [routerLink]="['/team']" class="btn btn-link">Team</a>
+    <a [routerLink]="['']" class="btn btn-link">Log-out</a>
+    <!-- <h6>Hi {{currentUser.username}}!</h6> -->
+</nav>
+<div class="row">
+  <div class="col-lg-6">  
+    <div class="gallery">
+      <br>
+      <h6 class="dashBoard">PLANTS</h6>
+      <img class="responsive" [src]="'assets/images/plant.jpg'" width="500" height="500">
+          <!-- <label for="plants">{{plants}}</label> -->
+    </div><br>
+    <button class="btn btn-primary" (click)='addPlants()'><span class="glyphicon glyphicon-shopping-cart"></span>Add</button>
+  </div>
+  <div class="col-lg-6">  
+    <div class="gallery">
+      <br>
+      <h6 class="dashBoard">FLOWERS</h6>
+      <img class="responsive" [src]="'assets/images/flower.jpg'" width="500" height="500">
+          <!-- <label for="flowers">{{flowers}}</label> -->
+    </div><br>
+    <button class="btn btn-primary" click='addFlowers()'><span class="glyphicon glyphicon-shopping-cart"></span>Add</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6"> 
+    <div class="gallery">                
+      <br>
+      <h6 class="dashBoard">SEEDS</h6>
+      <img class="responsive" [src]="'assets/images/seeds.jpg'" width="500" height="500">
+          <!-- <label for="seeds">{{seeds}}</label> -->
+    </div><br>
+    <button class="btn btn-primary" click='addSeeds()'><span class="glyphicon glyphicon-shopping-cart"></span>Add</button>
+ </div>
+ <div class="col-lg-6"> 
+    <div class="gallery">                
+      <br>
+      <h6 class="dashBoard">POTS</h6>
+      <img class="responsive" [src]="'assets/images/pots.jpg'" width="500" height="500">
+          <!-- <label for="pots">{{pots}}</label> -->
+    </div><br>
+    <button class="btn btn-primary" click='addPots()'><span class="glyphicon glyphicon-shopping-cart"></span>Add</button>
+ </div>
+</div>

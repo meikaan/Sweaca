@@ -1,3 +1,19 @@
-h1{
-	
+.dashBoard{
+	margin-left: 200px;
+}
+.row{
+	margin-left: 20px;
+}
+.btn-primary{
+	margin-left: 220px;
+}
+img {
+   padding:1px;
+   border:1px solid #021a40;
+}
+/*.navbar-default{
+	background-color: #13AC0C;
+}*/
+body{
+	background-color: #18F5E8;
 }
