@@ -4,9 +4,9 @@
     <a [routerLink]="['']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
     <a [routerLink]="['/team']" class="btn btn-link">Team</a>
     <a [routerLink]="['']" class="btn btn-link">Log-out</a>
-</nav>
-<div class="col-md-6 col-md-offset-3">
-	<h4>Get in touch</h4>
+</nav><br><br>
+<div class="container">
+	<h3>Get in touch</h3>
 		<form class="form-group" [formGroup] = "contactForm" (ngSubmit)="onSubmit(contactForm.value)">
 		<p>First Name:<br>
 			<input autofocus="true" class="form-control" type="text" name="username" formControlName="firstname" required>
