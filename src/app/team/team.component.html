@@ -1,8 +1,38 @@
 <nav class="navbar navbar-default">
   <h5>SWEACA NUSERY</h5>
     <a [routerLink]="['']" class="btn btn-link"><i class="fa fa-home"></i>Home</a>
-    <a [routerLink]="['contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
-    <a [routerLink]="['team']" class="btn btn-link">Team</a>
-    <a [routerLink]="['login']" class="btn btn-link">Log-In</a>
-	<a [routerLink]="['register']" class="btn btn-link">Register</a>
+    <a [routerLink]="['/contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
+    <a [routerLink]="['/team']" class="btn btn-link">Team</a>
 </nav>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img [src]="'assets/images/founder.jpg'" alt="Tamil" height="500" width="500"><br>
+      <div class="container">
+        <h2>Tamillharsan Chandran</h2>
+        <p class="title">CEO &amp; Founder</p>
+        <p>tamil@meikaan.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img [src]="'assets/images/back.jpg'" alt="Monika" height="500" width="500"><br>
+      <div class="container">
+        <h2>Monika Vattigunta</h2>
+        <p class="title">Back-End Developer</p>
+        <p>monika@vattigunta.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img [src]="'assets/images/front.jpeg'" alt="Jitesh" height="500" width="500"><br>
+      <div class="container">
+        <h2>Jitesh Singh</h2>
+        <p class="title">Front-End Developer</p>
+        <p>jitesh.singh@meikaa.in</p>
+      </div>
+    </div>
+  </div>    
+</div>
