@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,11 +11,16 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
 users:Array<any>;
-  constructor(private dataService : DataService) { 
+  constructor(private dataService : DataService,private router : Router) { 
       // this.dataService.getUsers()
       // .subscribe(res => this.users = res);
   }
   ngOnInit() {
   }
-
+  navigateToLogin(){
+  	this.router.navigate(['login']);
+  }
+  navigateToRegister(){
+  	this.router.navigate(['register']);
+  }
 }

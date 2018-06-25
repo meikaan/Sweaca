@@ -1,8 +1,13 @@
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <h5>SWEACA NUSERY</h5>
     <a [routerLink]="['']" class="btn btn-link"><i class="fa fa-home"></i>Home</a>
     <a [routerLink]="['/contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
     <a [routerLink]="['/team']" class="btn btn-link">Team</a>
     <a [routerLink]="['/login']" class="btn btn-link">Log-In</a>
-  <a [routerLink]="['/register']" class="btn btn-link">Register</a>
-</nav>
+  	<a [routerLink]="['/register']" class="btn btn-link">Register</a>
+</nav> -->
+<div class="container">
+	<h2>Welcome To Sweaca Nursery</h2>
+	<button (click)='navigateToLogin()' class="btn btn-primary hvr-forward">Login</button>
+	<button (click)='navigateToRegister()' class="btn btn-primary hvr-forward">Register</button>
+</div>

@@ -1,0 +1,16 @@
+h2{
+	text-align: center;
+	font-weight: bold;
+	font-family: "verdana";
+}
+button{
+	margin-left: 290px;
+	margin-top: 50px;
+}
+.container{
+	margin-top: 40px;
+	padding-bottom: 100px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: #606A41;
+}
