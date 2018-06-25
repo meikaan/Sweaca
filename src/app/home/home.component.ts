@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -11,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
 users:Array<any>;
-  constructor(private dataService : DataService,private router : Router) { 
+  constructor(private router : Router) { 
       // this.dataService.getUsers()
       // .subscribe(res => this.users = res);
   }

@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Http,HttpModule,Headers } from '@angular/http' 
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../user.service';
-import { DataService } from '../data.service';
 import { User } from '../models/user';
 @Component({
   selector: 'app-dashboard',
@@ -19,13 +18,12 @@ plants:any;flowers:any;seeds:any;pots:any;
   constructor(
       private http:Http,
     private router : Router,
-    public _user:UserService,
-    public dataService : DataService) {
+    public _user:UserService
+    ) {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
 
   ngOnInit() {
-    this.dataService.currentMessage.subscribe(message => this.message = message);
   }
   addPlants(){
    // this.plants = parseInt(prompt("How many you want"));

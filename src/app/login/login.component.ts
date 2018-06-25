@@ -6,7 +6,6 @@ import { Http,HttpModule,Headers } from '@angular/http'
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { UserService } from '../user.service';
-import { DataService } from '../data.service';
 import { AuthenticationService } from '../authentication.service';
 // import { contentHeaders } from '../../headers';
 // import { contentHeaders } from '../common/headers';
@@ -26,7 +25,6 @@ username:string="";password:string="";
   private http:Http,
   private router : Router,
   public _user:UserService,
-  public dataService : DataService,
   private authenticationService : AuthenticationService) { } 
   ngOnInit() {
       // this.authenticationService.logout();

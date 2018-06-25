@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
-import { DataService } from './data.service';
 import { UserService } from './user.service';
 import { JwtInterceptor } from './helpers';
 import { AuthenticationService} from './authentication.service';
@@ -79,7 +78,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ]),
   ],
   providers: [
-      DataService,
       UserService,
       AuthenticationService,
       AuthguardGuard,
