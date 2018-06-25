@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 import { User } from '../models/user';
 
 @Component({
@@ -12,7 +11,7 @@ message : string;
 hello:string;
 currentUser : User;
 public value:string="";
-  constructor(private dataService : DataService) { 
+  constructor() { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
   ngOnInit() {
