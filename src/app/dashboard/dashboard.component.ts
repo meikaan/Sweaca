@@ -12,7 +12,8 @@ import { User } from '../models/user';
 })
 export class DashboardComponent implements OnInit {
 home;
-users : User[];
+currentUser : User;
+users : User[] = [];
 message:string;
 plants:any;flowers:any;seeds:any;pots:any;
   constructor(
@@ -20,8 +21,8 @@ plants:any;flowers:any;seeds:any;pots:any;
     private router : Router,
     public _user:UserService,
     public dataService : DataService) {
-        // this.dataService.myMethod(this.value);
-     }
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    }
 
   ngOnInit() {
     this.dataService.currentMessage.subscribe(message => this.message = message);
