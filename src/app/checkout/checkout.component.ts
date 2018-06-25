@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-checkout',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-
-  constructor() { }
-
+message : string;
+hello:string;
+currentUser : User;
+public value:string="";
+  constructor(private dataService : DataService) { 
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
   ngOnInit() {
   }
+  // newMessage(){
+  // 	this.dataService.changeMessage("Hello from Dashboard");
+  // }
 
 }
