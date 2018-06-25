@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http' 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
 import { DataService } from './data.service';
 import { UserService } from './user.service';
-import { JwtInterceptorProvider, ErrorInterceptorProvider } from './helpers/index';
+import { JwtInterceptor } from './helpers';
 import { AuthenticationService} from './authentication.service';
  import { AuthguardGuard } from './authguard.guard';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { fakeBackendProvider } from './helpers';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -46,8 +47,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       component: LoginComponent 
     },
     {
-    	path : 'login',
-    	component : LoginComponent
+      path : 'login',
+      component : LoginComponent
     },
     {
       path : 'register',
@@ -55,7 +56,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     },
     {
       path : 'dashboard',
-      // canActivate : [AuthguardGuard],
+      canActivate : [AuthguardGuard],
       component : DashboardComponent
     },
     {
@@ -64,6 +65,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     },
     {
       path : 'checkout',
+      canActivate : [AuthguardGuard],
       component : CheckoutComponent
     },
     {
@@ -82,8 +84,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       AuthenticationService,
       AuthguardGuard,
       HttpClientModule,
-      JwtInterceptorProvider,
-      ErrorInterceptorProvider
+      {
+        provide : HTTP_INTERCEPTORS,
+        useClass : JwtInterceptor,
+        multi : true
+      },
+      fakeBackendProvider
       ],
   bootstrap: [AppComponent]
 })
