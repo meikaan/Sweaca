@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Http,HttpModule,Headers } from '@angular/http' 
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { UserService } from '../user.service';
 import { DataService } from '../data.service';
 import { AuthenticationService } from '../authentication.service';
@@ -16,7 +17,7 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-loginForm;
+loginForm:FormGroup;
 model:any={};
 username:string="";password:string="";
 // username:string="";
@@ -34,57 +35,23 @@ username:string="";password:string="";
         password : new FormControl("",Validators.required)
       });
   }
+  get f(){return this.loginForm.controls}
   onSubmit(){
-  }
-  // login(){
-  //   this.authenticationService.login(this.model.username, this.model.password)
-  //           .subscribe(
-  //               data => {
-  //                   this.router.navigate(['home']);
-  //               },
-  //               error => {
-  //                 if(error){
-  //                   console.log(error);
-  //                 }
-  //                   // this.alertService.error(error);
-  //                   // this.loading = false;
-  //               });
-  // }
-}
-      // code...
-    //console.log(this.login.get('username').value);
-     // getData(){
-  //   this.http.get('https://my-json-server.typicode.com/typicode/demo/db')
-  //   .subscribe((data) => {console.log(data)})
-  //   // console.log()
-  // }
-  // let headers : Headers;
-  // let body = JSON.stringify([this.username,this.password]);
-  // headers.append("Authentication","Basic" + btoa(this.username + "this is" +this.password));
-  // headers.append("Content-Type","application/x-www-form-encoded");
-  // this.http.post('http://localhost:4200/users',body,{headers:headers})
-  // .subscribe(
-  //   response => {
-  //                 localStorage.setItem('id_token',response.json().id_token);
-  //                 this.router.navigate(['home']);
-  //               },
-  //   error =>   {
-  //                 console.log(error);
-  //              }            
-  //   );
-
-/*    onSubmit(){
-    this.username = this.login.get('username').value;
-    this.password = this.login.get('password').value;
-    if (this.username == 'jitesh' && this.password == 'jitesh') {
-    alert("Thank u for login");
-    this.login.reset();
-    // this.user.setUserLoggedIn();
-    this.router.navigate(['home']);
+    if(this.loginForm.invalid){
+      return;
     }
-    else{
-      alert("Invalid Credentials");
-      this.login.reset();
-    }*/
-
-//   }
+    this.authenticationService.login(this.f.username.value,this.f.password.value)
+      .pipe(first())
+      .subscribe(
+          (data:any)=>{
+            this.router.navigate(['dashboard']);
+          },
+          (error)=>{
+            if(error){
+              alert("Username or Password is incorrect");
+              this.loginForm.reset();
+            }
+          }
+        )
+  }
+}
