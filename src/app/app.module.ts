@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http' 
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -39,11 +40,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
     {
       path: '',
-      component: LoginComponent 
+      component: HomeComponent 
     },
     {
       path : 'login',
