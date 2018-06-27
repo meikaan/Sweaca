@@ -1,13 +1,15 @@
-<!-- <nav class="navbar navbar-default">
-  <h5>SWEACA NUSERY</h5>
-    <a [routerLink]="['']" class="btn btn-link"><i class="fa fa-home"></i>Home</a>
-    <a [routerLink]="['/contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
-    <a [routerLink]="['/team']" class="btn btn-link">Team</a>
-    <a [routerLink]="['/login']" class="btn btn-link">Log-In</a>
-  	<a [routerLink]="['/register']" class="btn btn-link">Register</a>
-</nav> -->
-<div class="container">
-	<h2>Welcome To Sweaca Nursery</h2>
-	<button (click)='navigateToLogin()' class="btn btn-primary hvr-forward">Login</button>
-	<button (click)='navigateToRegister()' class="btn btn-primary hvr-forward">Register</button>
+<button (click)='toggle()' class="btn btn-primary">CLICK</button>
+<div class="row" [@popOverState]="stateName">
+  <div class="container">
+    <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" />
+    <p class="title">Login</p>
+    <div class="overlay"></div>
+    <div class="button"><a [routerLink]="['/login']" class="hvr-forward" style="font-family:Rakkas;">Login</a></div><br><br>
+  </div>
+  <div class="container">
+    <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" />
+    <p class="title">Register</p>
+    <div class="overlay"></div>
+    <div class="button"><a [routerLink]="['/register']" class="hvr-forward" style="font-family: Rakkas;">Register</a></div><br><br>
+  </div>
 </div>
