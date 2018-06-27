@@ -7,6 +7,12 @@ h2{
 img{
     border-radius: 5px;
 }
+h4{
+    color: #161334;
+    font-weight : bold;
+    font-family: Rakkas;
+    font-size: 30px; 
+}
 /*h5{
     color: #F0AC5B;
     font-weight: bold;
@@ -52,7 +58,9 @@ img{
 .title {
     color: black;
     text-align: center;
-    font-weight: bold;
+    font-family: 'Concert One', cursive;
+    text-shadow: 2px 2px 2px #bbb;
+    font-size: 20px;
 }
 
 .button {

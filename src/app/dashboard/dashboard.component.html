@@ -4,12 +4,15 @@
     <a [routerLink]="['/contact']" class="btn btn-link"><i class="fa fa-contact"></i>Contact</a>
     <a [routerLink]="['/team']" class="btn btn-link">Team</a>
 </nav> -->
-<h6>Hi {{currentUser.username}}!</h6>
-<a [routerLink]="['/home']" class="btn btn-link">Log-out</a>
+<nav class="navbar">
+  <h4>Hi {{currentUser.username}}!</h4>
+  <a [routerLink]="['/home']" class="btn btn-link">Log-out</a>
+</nav>
+<div class="container"><p class="title">We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, We at Sweaca Nursery sell different types of flowers, plants, </p></div>
 <br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/conifers.jpg'" alt="conifer" height="500" width="742"><br>
       <div class="container">
         <h2>Conifers</h2>
@@ -20,7 +23,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/bromeliads.jpg'" alt="bromeliads" height="500" width="742"><br>
       <div class="container">
         <h2>Bromeliads</h2>
@@ -33,7 +36,7 @@
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/flax.jpg'" alt="flax" height="500" width="742"><br>
       <div class="container">
         <h2>Flax</h2>
@@ -44,7 +47,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/hemp.jpg'" alt="hemp" height="500" width="742"><br>
       <div class="container">
         <h2>Hemp</h2>
@@ -57,7 +60,7 @@
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/aster.jpg'" alt="aster" height="500" width="742"><br>
       <div class="container">
         <h2>Aster</h2>
@@ -68,7 +71,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/bergamot.jpg'" alt="bergamot" height="500" width="742"><br>
       <div class="container">
         <h2>Bergamot</h2>
@@ -81,7 +84,7 @@
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/daisy.jpg'" alt="daisy" height="500" width="742"><br>
       <div class="container">
         <h2>Daisy</h2>
@@ -92,7 +95,7 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card">
+    <div class="card" [@scrollAnimation]="state">
       <img [src]="'assets/images/lavender.jpg'" alt="lavender" height="500" width="742"><br>
       <div class="container">
         <h2>Lavender</h2>
