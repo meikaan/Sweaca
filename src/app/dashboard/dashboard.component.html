@@ -12,97 +12,98 @@
 <br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/conifers.jpg'" alt="conifer" height="500" width="742"><br>
       <div class="container">
         <h2>Conifers</h2>
         <p class="title">The Pinophyta, also known as Coniferophyta or Coniferae, or commonly as conifers, are a division of vascular land plants containing a single extant class, Pinopsida. They are gymnosperms, cone-bearing seed plants and even other plants.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out" [routerLink]="['/checkout']" >Add to Cart</button>
+        <p class="title">Price = Rs{{conifer}}</p>
+        <button class="button hvr-buzz-out" (click)='addConifer()'>Add to Cart</button>
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/bromeliads.jpg'" alt="bromeliads" height="500" width="742"><br>
       <div class="container">
         <h2>Bromeliads</h2>
         <p class="title">The Bromeliaceae are a family of monocot flowering plants of 51 genera and around 3475 known species native mainly to the tropical Americas, with a few species found in the American subtropics and one in tropical west Africa, Pitcairnia feliciana</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{bromeliads}}</p>
+        <button class="button hvr-buzz-out" (click)='addBromeliads()'>Add to Cart</button>
       </div>
     </div>
   </div>
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/flax.jpg'" alt="flax" height="500" width="742"><br>
       <div class="container">
         <h2>Flax</h2>
         <p class="title">Flax, also known as common flax or linseed, is a member of the genus Linum in the family Linaceae. It is a food and fiber crop cultivated in cooler regions of the world. It will grow only in winter.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{flax}}</p>
+        <button class="button hvr-buzz-out" (click)='addFlax()'>Add to Cart</button>
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/hemp.jpg'" alt="hemp" height="500" width="742"><br>
       <div class="container">
         <h2>Hemp</h2>
         <p class="title">Hemp, or industrial hemp, typically found in the northern hemisphere, is a variety of the Cannabis sativa plant species that is grown specifically for the industrial uses of its derived products.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{hemp}}</p>
+        <button class="button hvr-buzz-out" (click)='addHemp()'>Add to Cart</button>
       </div>
     </div>
   </div>
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/aster.jpg'" alt="aster" height="500" width="742"><br>
       <div class="container">
         <h2>Aster</h2>
         <p class="title">The aster is a flower with a bit of a wild appearance, but it fits nicely in many garden settings. The aster flower is the birth flower for the month of September, and is often used to mark twenty years of marriage.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{aster}}</p>
+        <button class="button hvr-buzz-out" (click)='addAster()'>Add to Cart</button>
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/bergamot.jpg'" alt="bergamot" height="500" width="742"><br>
       <div class="container">
         <h2>Bergamot</h2>
         <p class="title">Monarda fistulosa, the wild bergamot or bee balm, is a wildflower in the mint family widespread and abundant as a native plant in much of North America 1 to 2-inch round flower heads of lavender to purple tubular flowers.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{bergamot}}</p>
+        <button class="button hvr-buzz-out" (click)='addBergamot()'>Add to Cart</button>
       </div>
     </div>
   </div>
 </div><br>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/daisy.jpg'" alt="daisy" height="500" width="742"><br>
       <div class="container">
         <h2>Daisy</h2>
         <p class="title">There's common daisies, African daisies, and Shasta daisies, to name a few. In fact, there's a whole family of plants that is known as the daisy family. The more scientific name for that family is Asteraceae.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{daisy}}</p>
+        <button class="button hvr-buzz-out" (click)='addDaisy()'>Add to Cart</button>
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card" [@scrollAnimation]="state">
+    <div class="card" [@scrollAnimation]='state'>
       <img [src]="'assets/images/lavender.jpg'" alt="lavender" height="500" width="742"><br>
       <div class="container">
         <h2>Lavender</h2>
         <p class="title"> It appears in herbal treatises as early as the 13th century as treatments for headaches and nervous disorders. Hardy plants that are quick to flower and hard to kill, lavender remains a favorite of gardeners to this day.</p>
-        <p class="title">Price = $10</p>
-        <button class="button hvr-buzz-out">Add to Cart</button>
+        <p class="title">Price = {{lavender}}</p>
+        <button class="button hvr-buzz-out" (click)='addLavender()'>Add to Cart</button>
       </div>
     </div>
   </div>
-</div>
+</div><br>
+<button class="button btn btn-primary hvr-buzz-out" style="margin-left: 570px; width: 25%" (click)='finalPayment()'>Checkout</button>
