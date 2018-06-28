@@ -5,6 +5,7 @@ import { User } from './models/user';
 
 @Injectable()
 export class UserService {
+    private flowerdata;
     constructor(private http: HttpClient) { }
 
     getAll() {
@@ -22,8 +23,15 @@ export class UserService {
     update(user: User) {
         return this.http.put('/api/users/' + user.id, user);
     }
+    setFlowerData(flowerdatas){
+        this.flowerdata=flowerdatas;
+    }
+    getFlowerData(){
+        return this.flowerdata;
+    }
 
     // delete(id: number) {
     //     return this.http.delete('/api/users/' + id);
     // }
+
 }
