@@ -10,7 +10,7 @@
 </nav> --><br><br>
 <div class="container">
     <h3>Login</h3>
-    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()" [@popOverStateDuplicate]="stateNameDuplicate">
             <p>Username*:<br>
                 <input autofocus="autofocus" class="form-control" type="text" name="username" placeholder="Username" formControlName="username" required>
             </p>
@@ -18,8 +18,15 @@
                 <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password" required >
             </p>
             <p>
-                <input type="submit" class="btn btn-primary hvr-forward" [disabled]="!loginForm.valid" value="Login">&nbsp;
+                <input type="submit" class="btn btn-primary hvr-forward" [disabled]="!loginForm.valid" value="Login">&nbsp;&nbsp;&nbsp;
                 <input type="button" class="btn btn-primary hvr-forward" value="Back" [routerLink]="['/home']">
+                &nbsp;&nbsp;&nbsp;
             </p>
+    </form>
+    <input type="button" class="btn btn-primary hvr-forward" value="Forgot Password" (click)='toggle()'><br><br>
+    <form class="form-group" [@popOverState]="stateName">
+            <input type="text" class="form-control" name="forgotPassword" placeholder="Enter your email address"><br>
+            <input type="button" class="btn btn-primary hvr-forward" value="Submit" (click)='sentMail()'><br><br>
+            <p style="font-weight: bold;">{{message}}</p>
     </form>
 </div>

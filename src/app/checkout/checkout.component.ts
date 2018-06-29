@@ -23,7 +23,7 @@ import { User } from '../models/user';
 })
 export class CheckoutComponent implements OnInit {
 myTotal:any;
-show=false;
+show=true;
 currentUser : User;
 public value:string="";
   constructor(private userService:UserService) { 

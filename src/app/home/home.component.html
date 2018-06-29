@@ -1,15 +1,17 @@
-<button (click)='toggle()' class="btn btn-primary hvr-icon-grow">CLICK</button>
-<div class="row" [@popOverState]="stateName">
-  <div class="container">
-    <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" />
-    <p class="title">Login</p>
-    <div class="overlay"></div>
-    <div class="button"><a [routerLink]="['/login']" class="hvr-forward" style="font-family:Rakkas;">Login</a></div><br><br>
+<body>
+  <button (click)='toggle()' class="btn btn-primary hvr-icon-hang"><i class="fa fa-chevron-circle-right hvr-icon"></i></button>
+  <div class="row" [@popOverState]="stateName">
+    <div class="container">
+      <!-- <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" /> -->
+      <p class="title">Login</p>
+      <div class="overlay"></div>
+      <div class="button"><a [routerLink]="['/login']" class="hvr-forward" style="font-family:Rakkas; font-weight: bold;">Login</a></div><br><br>
+    </div>
+    <div class="container">
+      <!-- <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" /> -->
+      <p class="title">Register</p>
+      <div class="overlay"></div>
+      <div class="button"><a [routerLink]="['/register']" class="hvr-forward" style="font-family: Rakkas; font-weight: bold;">Register</a></div><br><br>
+    </div>
   </div>
-  <div class="container">
-    <img src="https://www.123freevectors.com/wp-content/original/4549-black-green-blurred-background.jpg" alt="" />
-    <p class="title">Register</p>
-    <div class="overlay"></div>
-    <div class="button"><a [routerLink]="['/register']" class="hvr-forward" style="font-family: Rakkas;">Register</a></div><br><br>
-  </div>
-</div>
+</body>

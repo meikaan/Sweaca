@@ -2,10 +2,13 @@
   <h4>Hi {{currentUser.username}}!</h4>
   <a [routerLink]="['/home']" class="btn btn-link">Log-out</a>
 </nav>
-<button class="btn btn-primary hvr-forward" (click)='toggle()' style="margin-left: 600px;">Pay</button>
 <div class="container" [@popOverState]="stateName">
 	<p class="title">Our delivery boy will contact you on {{currentUser.contact}}</p>
     <p class="title">It will be delivered to {{currentUser.address}}</p>
     <p class="title">Here is the total amount {{myTotal}}</p>
     <br><br>
-</div>
+</div><br>
+<button class="button hvr-buzz-out">Pay</button>
+<!-- 
+Commented part
+ (click)='toggle()'  -->

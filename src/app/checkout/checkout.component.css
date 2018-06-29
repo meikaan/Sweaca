@@ -1,0 +1,54 @@
+.container{  
+  position: relative;
+  margin-top: 50px;
+  width: 500px;
+  height: 250px;
+  box-shadow: 2px 2px 2px 2px #bbb;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(2, 0, 10, 1);
+  filter: blur(0.6px);
+}
+.title{
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Rakkas";
+}
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 570px;
+    padding-left: 5px;
+    color: white;
+    background-color: #161334;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #188;
+}
+.hvr-buzz-out{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-buzz-out:hover, .hvr-buzz-out:focus, .hvr-buzz-out:active {
+  -webkit-animation-name: hvr-buzz-out;
+  animation-name: hvr-buzz-out;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
